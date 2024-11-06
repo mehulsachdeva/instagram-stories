@@ -1,5 +1,7 @@
+import Dashboard from "components/pages/Dashboard"
+
 const App = () => {
-	return <div>Instagram Stories</div>
+	return <Dashboard />
 }
 
 export default App

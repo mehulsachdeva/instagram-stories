@@ -1,0 +1,43 @@
+.container {
+	width: 62px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+	row-gap: 5px;
+	cursor: pointer;
+	flex-shrink: 0;
+}
+
+.thumbnail {
+	width: 57.5px;
+	height: 57.5px;
+	background: linear-gradient(to left, #fbaa47 0%, #d91a46 52%, #d91a46);
+	padding: 1.5px;
+	border-radius: 50%;
+	overflow: hidden;
+}
+
+.story {
+	width: 100%;
+	height: 100%;
+	background: #f3f3f3;
+	border: 2px solid #ffffff;
+	border-radius: inherit;
+}
+
+.image {
+	border-radius: inherit;
+	object-fit: cover;
+}
+
+.username {
+	width: 100%;
+	font-size: 12px;
+	font-weight: 500;
+	text-align: center;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}

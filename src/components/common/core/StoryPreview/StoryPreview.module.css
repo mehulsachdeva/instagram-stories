@@ -1,0 +1,127 @@
+.container {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100vw;
+	height: 100vh;
+	background: #5e5e5e;
+	color: #ffffff;
+	overflow: hidden;
+	z-index: 10;
+}
+
+.progress {
+	position: absolute;
+	display: flex;
+	align-items: center;
+	top: 7px;
+	left: 50%;
+	width: calc(100% - 14px);
+	height: 2px;
+	transform: translateX(-50%);
+	column-gap: 3px;
+	overflow: hidden;
+}
+
+.segment {
+	height: 100%;
+	background: #c8ccce;
+	border-radius: 4px;
+	overflow: hidden;
+	flex: 1;
+}
+
+.fill {
+	height: 100%;
+	width: 0%;
+	background: #ffffff;
+}
+
+.filled {
+	width: 100%;
+}
+
+.panel {
+	width: 100%;
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0px 12px 0px 10px;
+	top: 16px;
+	column-gap: 24px;
+}
+
+.details {
+	display: flex;
+	align-items: center;
+	font-size: 12px;
+	column-gap: 8px;
+	overflow: hidden;
+	flex: 1;
+}
+
+.userPicture {
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	overflow: hidden;
+	flex-shrink: 0;
+}
+
+.username {
+	font-weight: 600;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.timestamp {
+	color: #d4d6d8;
+	flex-shrink: 0;
+}
+
+.actions {
+	position: relative;
+	display: flex;
+	align-items: center;
+	column-gap: 14px;
+	top: 1.5px;
+	flex-shrink: 0;
+}
+
+.button {
+	cursor: pointer;
+}
+
+.image {
+	object-fit: cover;
+}
+
+.imageLoading {
+	opacity: 0;
+}
+
+.loader {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%);
+}
+
+.clickable {
+	position: absolute;
+	top: 46px;
+	left: 0px;
+	width: 100%;
+	height: calc(100% - 46px);
+	display: flex;
+	align-items: center;
+	z-index: 11;
+}
+
+.clickable > div {
+	height: 100%;
+	background: transparent;
+	flex: 1;
+}
