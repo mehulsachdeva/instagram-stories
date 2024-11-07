@@ -1,3 +1,4 @@
+import { memo } from "react"
 import styles from "./Thumbnails.module.css"
 import Story from "./Story"
 import { UserStoriesType } from "types/story"
@@ -20,4 +21,4 @@ const Thumbnails = (props: ThumbnailsProps) => {
 	)
 }
 
-export default Thumbnails
+export default memo(Thumbnails)
