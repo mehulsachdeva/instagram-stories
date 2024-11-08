@@ -114,10 +114,10 @@
 
 .clickable {
 	position: absolute;
-	top: 46px;
+	top: 60px;
 	left: 0px;
 	width: 100%;
-	height: calc(100% - 53px);
+	height: calc(100% - 60px);
 	display: flex;
 	align-items: center;
 	z-index: 11;
