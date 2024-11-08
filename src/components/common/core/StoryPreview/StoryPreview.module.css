@@ -6,15 +6,18 @@
 	height: 100vh;
 	background: #5e5e5e;
 	color: #ffffff;
+	animation: popup 0.1s linear forwards;
+	transform: scale(0.9);
 	overflow: hidden;
 	z-index: 10;
+	opacity: 0;
 }
 
 .progress {
 	position: absolute;
 	display: flex;
 	align-items: center;
-	top: 7px;
+	top: 10px;
 	left: 50%;
 	width: calc(100% - 14px);
 	height: 2px;
@@ -48,7 +51,7 @@
 	align-items: center;
 	justify-content: space-between;
 	padding: 0px 15px 0px 10px;
-	top: 16px;
+	top: 21px;
 	column-gap: 24px;
 }
 
@@ -62,8 +65,8 @@
 }
 
 .userPicture {
-	width: 30px;
-	height: 30px;
+	width: 32px;
+	height: 32px;
 	border-radius: 50%;
 	overflow: hidden;
 	flex-shrink: 0;
@@ -114,7 +117,7 @@
 	top: 46px;
 	left: 0px;
 	width: 100%;
-	height: calc(100% - 46px);
+	height: calc(100% - 53px);
 	display: flex;
 	align-items: center;
 	z-index: 11;
@@ -124,4 +127,15 @@
 	height: 100%;
 	background: transparent;
 	flex: 1;
+}
+
+@keyframes popup {
+	from {
+		opacity: 0;
+		transform: scale(0.9);
+	}
+	to {
+		opacity: 1;
+		transform: scale(1);
+	}
 }
