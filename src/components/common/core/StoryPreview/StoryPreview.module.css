@@ -47,7 +47,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	padding: 0px 12px 0px 10px;
+	padding: 0px 15px 0px 10px;
 	top: 16px;
 	column-gap: 24px;
 }
@@ -85,7 +85,7 @@
 	position: relative;
 	display: flex;
 	align-items: center;
-	column-gap: 14px;
+	column-gap: 18px;
 	top: 1.5px;
 	flex-shrink: 0;
 }

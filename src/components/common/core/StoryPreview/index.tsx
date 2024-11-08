@@ -128,10 +128,10 @@ const StoryPreview = (props: StoryPreviewProps) => {
 				</div>
 				<div className={styles.actions}>
 					<div className={styles.button}>
-						<KebabMenu width={15} height={15} />
+						<KebabMenu width={16} height={16} />
 					</div>
 					<div className={styles.button} onClick={handleClose}>
-						<Cross width={13} height={13} />
+						<Cross width={14} height={14} />
 					</div>
 				</div>
 			</div>
