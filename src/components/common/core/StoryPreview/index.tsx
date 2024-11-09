@@ -119,7 +119,7 @@ const StoryPreview = (props: StoryPreviewProps) => {
 								width="100%"
 								height="100%"
 								loading="lazy"
-								alt="story"
+								alt="profile"
 							/>
 						) : null}
 					</div>
@@ -130,7 +130,7 @@ const StoryPreview = (props: StoryPreviewProps) => {
 					<div className={styles.button}>
 						<KebabMenu width={16} height={16} />
 					</div>
-					<div className={styles.button} onClick={handleClose}>
+					<div data-testid="close" className={styles.button} onClick={handleClose}>
 						<Cross width={14} height={14} />
 					</div>
 				</div>
@@ -141,8 +141,8 @@ const StoryPreview = (props: StoryPreviewProps) => {
 				</div>
 			) : (
 				<div className={styles.clickable}>
-					<div onClick={() => handleScreenSectionClick("previous")} />
-					<div onClick={() => handleScreenSectionClick("next")} />
+					<div data-testid="previous" onClick={() => handleScreenSectionClick("previous")} />
+					<div data-testid="next" onClick={() => handleScreenSectionClick("next")} />
 				</div>
 			)}
 			<img

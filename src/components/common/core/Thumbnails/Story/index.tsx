@@ -12,7 +12,7 @@ const Story = (props: StoryProps) => {
 
 	if (!stories?.length) return null
 	return (
-		<div className={styles.container} onClick={() => onClick(data)}>
+		<div data-testid="container" className={styles.container} onClick={() => onClick(data)}>
 			<div className={styles.thumbnail}>
 				<div className={styles.story}>
 					<img
