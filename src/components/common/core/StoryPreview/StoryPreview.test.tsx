@@ -31,14 +31,13 @@ describe("StoryPreview", () => {
 			<StoryPreview data={mockData} timeout={500} onClose={mockOnClose} onSwitch={mockOnSwitch} />,
 		)
 
-		const firstStoryImage = screen.getByAltText("story")
-		expect(firstStoryImage).toHaveAttribute("src", mockData.stories[0].link)
-		fireEvent.load(firstStoryImage)
+		const story = screen.getByAltText("story")
+		expect(story).toHaveAttribute("src", mockData.stories[0].link)
+		fireEvent.load(story)
 
-		await waitFor(() => {
-			const secondStoryImage = screen.getByAltText("story")
-			expect(secondStoryImage).toHaveAttribute("src", mockData.stories[1].link)
-		})
+		await waitFor(() =>
+			expect(screen.getByAltText("story")).toHaveAttribute("src", mockData.stories[1].link),
+		)
 	})
 
 	test('navigates correctly on clicking the "next" / "previous" area', async () => {
