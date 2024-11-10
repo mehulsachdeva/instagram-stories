@@ -11,10 +11,11 @@ interface StoryPreviewProps {
 	timeout?: number
 	onClose: () => void
 	onSwitch: (type: NavigationType) => void
+	onChange?: (data: { index: number; count: number }) => void
 }
 
 const StoryPreview = (props: StoryPreviewProps) => {
-	const { data, timeout = 5000, onClose, onSwitch } = props
+	const { data, timeout = 5000, onClose, onChange, onSwitch } = props
 	const [activeIdx, setActiveIdx] = useState(0)
 	const [loading, setLoading] = useState(false)
 	const timeoutRef = useRef<NodeJS.Timeout | null>(null)
@@ -30,6 +31,7 @@ const StoryPreview = (props: StoryPreviewProps) => {
 	useEffect(() => {
 		if (stories?.length && !loading) {
 			prefetchImage(stories[activeIdx + 1]?.link)
+			onChange?.({ index: activeIdx, count: stories.length })
 			timeoutRef.current = setTimeout(() => {
 				if (activeIdx < stories.length - 1) {
 					handleStorySwitch(activeIdx + 1)
@@ -40,7 +42,7 @@ const StoryPreview = (props: StoryPreviewProps) => {
 		} else {
 			handleClearTimeout()
 		}
-	}, [loading, stories, activeIdx, timeout])
+	}, [loading, stories, activeIdx, timeout, onChange])
 
 	const handleScreenSectionClick = (type: NavigationType) => {
 		if (loading) return

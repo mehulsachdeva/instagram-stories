@@ -1,5 +1,6 @@
 import { useState, useCallback, Suspense, lazy } from "react"
 import { USERS as users } from "constants/stories"
+import { prefetchImage } from "utils/image"
 import Header from "components/common/core/Header"
 import Thumbnails from "components/common/core/Thumbnails"
 import { UserStoriesType, NavigationType } from "types/story"
@@ -27,6 +28,24 @@ const Dashboard = () => {
 		[activeUserIdx],
 	)
 
+	const handleStoryChange = useCallback(
+		({ index, count }: { index: number; count: number }) => {
+			let stories: Array<string> = []
+			if (index === 0 && count === 1) {
+				stories = [
+					users[activeUserIdx - 1]?.stories?.[0]?.link,
+					users[activeUserIdx + 1]?.stories?.[0]?.link,
+				]
+			} else if (index === 0) {
+				stories = [users[activeUserIdx - 1]?.stories?.[0]?.link]
+			} else if (index === count - 1) {
+				stories = [users[activeUserIdx + 1]?.stories?.[0]?.link]
+			}
+			stories.forEach((story) => prefetchImage(story))
+		},
+		[users, activeUserIdx],
+	)
+
 	return (
 		<>
 			<Header />
@@ -36,6 +55,7 @@ const Dashboard = () => {
 					<StoryPreview
 						data={preview}
 						onSwitch={handleUserSwitch}
+						onChange={handleStoryChange}
 						onClose={() => setPreview(null)}
 					/>
 				</Suspense>
