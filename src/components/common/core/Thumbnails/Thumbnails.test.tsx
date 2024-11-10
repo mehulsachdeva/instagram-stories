@@ -7,7 +7,6 @@ describe("Thumbnails", () => {
 
 	test("should render component", () => {
 		render(<Thumbnails data={mockData} onClick={mockOnClick} />)
-
 		mockData.forEach(async (user) => {
 			await waitFor(() => {
 				expect(screen.getByText(user.username)).toBeInTheDocument()

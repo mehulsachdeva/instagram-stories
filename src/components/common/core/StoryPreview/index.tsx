@@ -136,7 +136,7 @@ const StoryPreview = (props: StoryPreviewProps) => {
 				</div>
 			</div>
 			{loading ? (
-				<div className={styles.loader}>
+				<div data-testid="loader" className={styles.loader}>
 					<Spinner />
 				</div>
 			) : (

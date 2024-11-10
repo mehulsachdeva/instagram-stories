@@ -9,16 +9,9 @@ describe("Story", () => {
 
 	test("should render component and handle click", () => {
 		render(<Story data={mockData} onClick={mockOnClick} />)
-
-		const img = screen.getByAltText("story")
-		expect(img).toHaveAttribute("src", mockData.picture)
-
-		const username = screen.getByText(mockData.username)
-		expect(username).toBeInTheDocument()
-
-		const container = screen.getByTestId("container")
-		fireEvent.click(container)
-
+		expect(screen.getByAltText("story")).toHaveAttribute("src", mockData.picture)
+		expect(screen.getByText(mockData.username)).toBeInTheDocument()
+		fireEvent.click(screen.getByTestId("container"))
 		expect(mockOnClick).toHaveBeenCalledWith(mockData)
 	})
 })

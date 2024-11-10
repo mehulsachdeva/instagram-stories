@@ -3,7 +3,7 @@ import { render, screen } from "@testing-library/react"
 import Header from "."
 
 describe("Header", () => {
-	test("render", () => {
+	test("renders the component correctly", () => {
 		render(<Header />)
 		const logo = screen.getByAltText("instagram")
 		expect(logo).toBeInTheDocument()
