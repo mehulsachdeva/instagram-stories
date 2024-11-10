@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react"
 import styles from "./StoryPreview.module.css"
+import { prefetchImage } from "utils/image"
 import { Spinner } from "components/common/shared/Spinner"
 import { Cross } from "components/common/icons/Cross"
 import { KebabMenu } from "components/common/icons/KebabMenu"
@@ -28,6 +29,7 @@ const StoryPreview = (props: StoryPreviewProps) => {
 
 	useEffect(() => {
 		if (stories?.length && !loading) {
+			prefetchImage(stories[activeIdx + 1]?.link)
 			timeoutRef.current = setTimeout(() => {
 				if (activeIdx < stories.length - 1) {
 					handleStorySwitch(activeIdx + 1)
