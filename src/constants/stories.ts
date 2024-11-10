@@ -140,7 +140,7 @@ export const USERS: Array<UserStoriesType> = [
 	},
 	{
 		user_id: 10,
-		username: "lucky.pluto",
+		username: "tester1920",
 		picture:
 			"https://images.unsplash.com/profile-1648244179609-b4a4dcc8162cimage?w=64&dpr=1&crop=faces&bg=%23fff&h=64&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
 		stories: [
