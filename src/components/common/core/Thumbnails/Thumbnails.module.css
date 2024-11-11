@@ -1,0 +1,7 @@
+.container {
+	display: flex;
+	align-items: center;
+	padding: 9px 10px;
+	column-gap: 10px;
+	overflow-x: scroll;
+}
